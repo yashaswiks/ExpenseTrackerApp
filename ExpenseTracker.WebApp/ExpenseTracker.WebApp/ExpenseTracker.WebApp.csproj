@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Components\Pages\CodeValueClassification.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\ExpenseTracker.BusinessLogic\ExpenseTracker.BusinessLogic.csproj" />
     <ProjectReference Include="..\ExpenseTracker.WebApp.Client\ExpenseTracker.WebApp.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.4" />
@@ -15,6 +19,18 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Components\Pages\CodeValueClassification.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Components\Pages\CodeValueClassification.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Components\Pages\CodeValueClassification.razor" />
   </ItemGroup>
 
 </Project>

@@ -1,3 +1,5 @@
+using ExpenseTracker.BusinessLogic.Repository;
+using ExpenseTracker.BusinessLogic.Repository.IRepository;
 using ExpenseTracker.WebApp.Client.Pages;
 using ExpenseTracker.WebApp.Components;
 
@@ -7,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+builder.Services.AddScoped<ICodeValueClassificationRepository, CodeValueClassificationRepository>();
+builder.Services.AddScoped<IDatabaseOptions, DatabaseOptions>();
 
 var app = builder.Build();
 

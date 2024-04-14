@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.WebApp", "ExpenseTracker.WebApp\ExpenseTracker.WebApp\ExpenseTracker.WebApp.csproj", "{B008BCA2-E175-4388-8C2E-88DE33CD08C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseTracker.WebApp", "ExpenseTracker.WebApp\ExpenseTracker.WebApp\ExpenseTracker.WebApp.csproj", "{B008BCA2-E175-4388-8C2E-88DE33CD08C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.WebApp.Client", "ExpenseTracker.WebApp\ExpenseTracker.WebApp.Client\ExpenseTracker.WebApp.Client.csproj", "{5C3A5E22-BB6D-41C8-8F99-DB304872CB6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseTracker.WebApp.Client", "ExpenseTracker.WebApp\ExpenseTracker.WebApp.Client\ExpenseTracker.WebApp.Client.csproj", "{5C3A5E22-BB6D-41C8-8F99-DB304872CB6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.BusinessLogic", "ExpenseTracker.BusinessLogic\ExpenseTracker.BusinessLogic.csproj", "{312C9201-C20C-49FC-B482-519F87C257B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseTracker.BusinessLogic", "ExpenseTracker.BusinessLogic\ExpenseTracker.BusinessLogic.csproj", "{312C9201-C20C-49FC-B482-519F87C257B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
