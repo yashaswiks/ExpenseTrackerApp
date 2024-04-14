@@ -2,14 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>46519935-45d9-44a4-95ff-36b4276f577a</UserSecretsId>
+    <UserSecretsId>521c3bd1-a878-4ac7-b28e-c9ff5742c69b</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Remove="Components\Pages\CodeValueClassification.razor" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\ExpenseTracker.BusinessLogic\ExpenseTracker.BusinessLogic.csproj" />
@@ -19,18 +15,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Components\Pages\CodeValueClassification.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Components\Pages\CodeValueClassification.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Components\Pages\CodeValueClassification.razor" />
   </ItemGroup>
 
 </Project>
