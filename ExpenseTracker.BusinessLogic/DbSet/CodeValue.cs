@@ -10,4 +10,8 @@ public class CodeValue
 
     [Column(TypeName = "varchar(200)")]
     public string Value { get; set; }
+
+    public ICollection<Transaction> TransactionTypes { get; set; } = new List<Transaction>();
+    public ICollection<Transaction> Categories { get; set; } = new List<Transaction>();
+    public ICollection<Transaction> MoneySources { get; set; } = new List<Transaction>();
 }

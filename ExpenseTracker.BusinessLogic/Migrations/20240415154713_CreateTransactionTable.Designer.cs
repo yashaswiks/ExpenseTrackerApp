@@ -3,6 +3,7 @@ using System;
 using ExpenseTracker.BusinessLogic.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExpenseTracker.BusinessLogic.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240415154713_CreateTransactionTable")]
+    partial class CreateTransactionTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.4");
@@ -68,9 +71,6 @@ namespace ExpenseTracker.BusinessLogic.Migrations
                     b.Property<bool>("IsReversed")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("MoneySourceId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Notes")
                         .HasColumnType("TEXT");
 
@@ -80,8 +80,6 @@ namespace ExpenseTracker.BusinessLogic.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("MoneySourceId");
 
                     b.HasIndex("TransactionTypeId");
 
@@ -107,12 +105,6 @@ namespace ExpenseTracker.BusinessLogic.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ExpenseTracker.BusinessLogic.DbSet.CodeValue", "MoneySource")
-                        .WithMany("MoneySources")
-                        .HasForeignKey("MoneySourceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("ExpenseTracker.BusinessLogic.DbSet.CodeValue", "TransactionType")
                         .WithMany("TransactionTypes")
                         .HasForeignKey("TransactionTypeId")
@@ -121,16 +113,12 @@ namespace ExpenseTracker.BusinessLogic.Migrations
 
                     b.Navigation("Category");
 
-                    b.Navigation("MoneySource");
-
                     b.Navigation("TransactionType");
                 });
 
             modelBuilder.Entity("ExpenseTracker.BusinessLogic.DbSet.CodeValue", b =>
                 {
                     b.Navigation("Categories");
-
-                    b.Navigation("MoneySources");
 
                     b.Navigation("TransactionTypes");
                 });

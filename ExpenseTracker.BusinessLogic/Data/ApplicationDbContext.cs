@@ -10,6 +10,7 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<CodeValueClassification> CodeValueClassifications { get; set; }
     public DbSet<CodeValue> CodeValues { get; set; }
+    public DbSet<Transaction> Transactions { get; set; }
 
     public ApplicationDbContext(IConfiguration config)
     {
@@ -19,5 +20,26 @@ public class ApplicationDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlite(_config.GetConnectionString("DefaultConnection"));
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Transaction>()
+            .HasOne(t => t.TransactionType)
+            .WithMany(cv => cv.TransactionTypes)
+            .HasForeignKey(t => t.TransactionTypeId)
+            .IsRequired();
+
+        modelBuilder.Entity<Transaction>()
+            .HasOne(t => t.Category)
+            .WithMany(cv => cv.Categories)
+            .HasForeignKey(t => t.CategoryId)
+            .IsRequired();
+
+        modelBuilder.Entity<Transaction>()
+            .HasOne(t => t.MoneySource)
+            .WithMany(cv => cv.MoneySources)
+            .HasForeignKey(t => t.MoneySourceId)
+            .IsRequired();
     }
 }
