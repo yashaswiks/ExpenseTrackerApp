@@ -1,4 +1,4 @@
-﻿using ExpenseTracker.BusinessLogic.Repository.IRepository.Model;
+﻿using ExpenseTracker.BusinessLogic.Model;
 
 namespace ExpenseTracker.BusinessLogic.Repository.IRepository;
 

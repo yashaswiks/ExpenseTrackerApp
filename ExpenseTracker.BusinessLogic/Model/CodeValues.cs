@@ -1,4 +1,4 @@
-﻿namespace ExpenseTracker.BusinessLogic.Repository.IRepository.Model;
+﻿namespace ExpenseTracker.BusinessLogic.Model;
 
 public class CodeValues
 {

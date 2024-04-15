@@ -1,5 +1,5 @@
+using ExpenseTracker.BusinessLogic.Model;
 using ExpenseTracker.BusinessLogic.Repository.IRepository;
-using ExpenseTracker.BusinessLogic.Repository.IRepository.Model;
 using Microsoft.AspNetCore.Components;
 
 namespace ExpenseTracker.WebApp.Components.Pages;

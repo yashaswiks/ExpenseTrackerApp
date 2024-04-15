@@ -1,6 +1,6 @@
 ﻿using Dapper;
+using ExpenseTracker.BusinessLogic.Model;
 using ExpenseTracker.BusinessLogic.Repository.IRepository;
-using ExpenseTracker.BusinessLogic.Repository.IRepository.Model;
 using Microsoft.Data.Sqlite;
 using System.Data;
 
