@@ -1,0 +1,34 @@
+﻿@rendermode InteractiveServer
+@page "/code-value"
+<PageTitle>Code Value</PageTitle>
+<h3>Code Value</h3>
+
+
+<EditForm Model="InsertCodeValueModel" OnValidSubmit="SubmitAsync">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label for="value">Value</label>
+        <InputText id="value" class="form-control" @bind-Value="InsertCodeValueModel.Value" />
+    </div>
+    <div class="form-group">
+        <label for="codeValueClassification">Classification</label>
+        <InputSelect class="form-control" @bind-Value="InsertCodeValueModel.CodeValueClassificationId" id="codeValueClassification">
+            <option value="">-Select Classification-</option>
+            @if(CodeValueClassifications?.Count > 0)
+            {
+                @foreach (var item in CodeValueClassifications)
+                {
+                    <option value="@item.Id">@item.Value</option>
+                }
+            }
+        </InputSelect>
+    </div>
+
+    <div class="pt-2">
+        <button class="btn btn-primary">Submit</button>
+    </div>
+
+</EditForm>
+
+
